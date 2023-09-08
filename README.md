@@ -1,4 +1,4 @@
-# Live link : [https://booze1.netlify.app](https://booze1.netlify.app)
+Live link : [https://booze1.netlify.app](https://booze1.netlify.app)
 
 ```markdown
 # React Beer Search App
