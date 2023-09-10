@@ -28,31 +28,6 @@ img {
   align-items: center;
 }
 
-input {
-  height: 24px;
-  padding-left: 5px;
-  margin-right: 10px;
-}
-
-button {
-  width:70px;
-  height: 32px;
-  background-color: rgb(16, 0, 239);
-  border-color: transparent;
-  color: white;
-  font-weight: 400;
-  border-radius: 3px;
-}
-
-form {
-  z-index: 1;
-  padding: 15px;
-  border-bottom: 5px solid rgb(120, 255, 9);
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(8px);
-}
-
 h1 {
   color: rgb(99, 255, 8);
   font-weight: 200;
@@ -63,7 +38,7 @@ h1 {
 p {
   font-weight: 100;
   margin:0;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .beer-details {
@@ -88,4 +63,94 @@ p {
     font-size: 16px;
     font-weight: 100;
   }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  width: 400px;
+  margin: 20px;
+  border: 2px solid rgb(155, 140, 140);
+  padding: 20px;
+  border-radius: 4px;
+  transition-duration: 0.5s;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.card-description {
+  font-size: 12px;
+}
+
+.card-title {
+  color: rgb(60, 255, 0);
+  font-size: 24px;
+}
+
+.card:hover {
+  background-color: rgb(5, 142, 5);
+  border-color: rgb(206, 198, 198);
+  transition-duration: 0.5s;
+}
+
+ol {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  width: 200px;
+  margin: 10px;
+}
+
+/* Form css */
+form {
+  border: 2px solid rgb(155, 140, 140);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+}
+
+form * {
+  margin: 10px;
+}
+
+label {
+  font-size: 18px;
+  margin: 0px 10px;
+  padding: 0;
+}
+
+input::placeholder {
+  padding-left: 10px;
+}
+
+input {
+  height: 24px;
+  border-color: transparent;
+  outline-color: transparent;
+  padding-left: 10px;
+}
+
+button {
+  padding: 6px;
+  background-color: rgb(62, 62, 243);
+  color: white;
+  border-color: transparent;
+  cursor: pointer;
 }

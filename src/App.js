@@ -1,58 +1,34 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Routes , Route, BrowserRouter, Link} from "react-router-dom";
+import Beers from "./Beers";
+import Login from "./Form";
+import { useSelector } from "react-redux";
 
-function App() {
-  const [search, setSearch] = useState('Buzz');
-  const [data, setData] = useState([])
+function NavBar(){
+  return(
+    <div className="navbar">
+      <Link to={"/"}>Login</Link>
+      <Link to={"/Beers"}>Beers</Link>
+    </div>
+  )
+}
 
-  useEffect(() => {
-    fetch(`https://api.punkapi.com/v2/beers?beer_name=${search}`)
-    .then((response) => response.json())
-    .then((data) => setData(data))
-  }, [search]);
+<BrowserRouter>
+<Routes>
+  <Route path="/" index element={<Beers />} />
+  <Route path="/login" element={<Login />} />
+</Routes>
+</BrowserRouter>
 
-  function Details(props) {
-    return(
-      <>
-      {props.props.map((beer) => {
-        if(beer.error)
-        return <p>{beer.error}</p>
-        else {
-          return(
-          <div className='container' key={beer.id}>
-            <div className='beer'>
-            <img src={beer.image_url} alt={beer.name} />
-            <div className='beer-details'>
-            <h1>{beer.name}</h1>
-            <p>{beer.description}</p>
-            </div>
-            </div>
-          </div>
-        )
-        }
-      })}
-      </>
-    )
-  }
+function App () {
+  const isAuth = useSelector((state) => state.user.auth);
 
-  return (
+  return(
     <>
-    <form onSubmit={(e) => {
-      e.preventDefault()
-      if(e.target.search.value === '') {
-        alert('Please enter a valid beer name')
-      }
-      else setSearch(e.target.search.value)
-      } }>
-      <input
-        type="text"
-        name = "search"
-        />
-      <button type="submit">Search</button>
-    </form>
-    <Details props={data} />
+    { isAuth ? <Beers /> : <Login />}
     </>
-  );
+  )
 }
 
 export default App;
