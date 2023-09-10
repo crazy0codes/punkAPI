@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import store from './store/store';
 
 function Card({ name, description, image_url, id }) {
   return (
