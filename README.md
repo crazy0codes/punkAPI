@@ -1,5 +1,12 @@
 Live link : [https://booze1.netlify.app](https://booze1.netlify.app)
 
+![image](https://github.com/crazy0codes/punkAPI/assets/107941826/1f29736b-e69f-4db3-9f9e-8cbac22afe38)
+
+![image](https://github.com/crazy0codes/punkAPI/assets/107941826/7950af83-a753-4c0d-b21b-cf28d6ddf1c1)
+
+
+
+
 ```markdown
 # React Beer Search App
 
