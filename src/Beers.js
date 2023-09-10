@@ -22,7 +22,7 @@ function Beers() {
     fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=9`)
       .then(data => data.json())
       .then(data => setBeers([...beers , ...data]));
-  }, [page]);
+  }, [page,beers]);
 
   window.onscroll = function() {if (document.documentElement.getBoundingClientRect().bottom - window.innerHeight < 1) setPage(page + 1); }
 
